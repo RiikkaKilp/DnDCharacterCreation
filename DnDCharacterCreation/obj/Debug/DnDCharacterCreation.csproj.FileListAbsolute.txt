@@ -1,0 +1,6 @@
+C:\Users\Riikka\Desktop\KAMK\Ohjelmoinnin perusteet\DnDCharacterCreation\DnDCharacterCreation\bin\Debug\DnDCharacterCreation.exe.config
+C:\Users\Riikka\Desktop\KAMK\Ohjelmoinnin perusteet\DnDCharacterCreation\DnDCharacterCreation\obj\Debug\DnDCharacterCreation.csprojResolveAssemblyReference.cache
+C:\Users\Riikka\Desktop\KAMK\Ohjelmoinnin perusteet\DnDCharacterCreation\DnDCharacterCreation\bin\Debug\DnDCharacterCreation.exe
+C:\Users\Riikka\Desktop\KAMK\Ohjelmoinnin perusteet\DnDCharacterCreation\DnDCharacterCreation\bin\Debug\DnDCharacterCreation.pdb
+C:\Users\Riikka\Desktop\KAMK\Ohjelmoinnin perusteet\DnDCharacterCreation\DnDCharacterCreation\obj\Debug\DnDCharacterCreation.exe
+C:\Users\Riikka\Desktop\KAMK\Ohjelmoinnin perusteet\DnDCharacterCreation\DnDCharacterCreation\obj\Debug\DnDCharacterCreation.pdb
