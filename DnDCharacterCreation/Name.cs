@@ -17,6 +17,7 @@ namespace DnDCharacterCreation
 
             while (!nameOkay)
             {
+                // git test
                 Console.WriteLine("----- INPUT NAME -----");
                 newName = Console.ReadLine();
                 Console.WriteLine("Is the name " + newName + " okay?");
