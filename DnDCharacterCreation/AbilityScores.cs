@@ -8,13 +8,15 @@ namespace DnDCharacterCreation
 {
     class AbilityScores : TextEffects
     {
+        string[] abilities = { "STRENGHT", "DEXTERITY", "CONSTITUTION", "INTELLIGENCE", "WISWOM", "CHARISMA" };
         int[] standardSet = {15, 14, 13, 12, 10, 8 };
-        int[] customSet = { };
+        int[] customSet = {0, 0, 0, 0, 0, 0 };
 
-        //      SELECTED STATS IN THE FOLLOWING ORDER:  STR, DEX, CONST, INT, WIS, CHA      //
-        int[] selectionOrder = { };
+        //      SELECTED STATS IN THE FOLLOWING ORDER:  STR, DEX, CONST, INT, WIS, CHA, null      //
+        public static int[] SKILLS = {0, 0, 0, 0, 0, 0};
 
         bool selectionOkay = false;
+        int scoreInput;
 
         public void ChooseMethod()
         {
@@ -42,6 +44,14 @@ namespace DnDCharacterCreation
             Console.Write("affects ");
             InfoColor();
             Console.Write("ACROBATICS, STEALTH\n");
+            ClearColor();
+
+            InfoColor();
+            Console.Write("CONSTITUTION ");
+            ClearColor();
+            Console.Write("affects ");
+            InfoColor();
+            Console.Write("HIT POINT TOTAL\n");
             ClearColor();
 
             InfoColor();
@@ -105,47 +115,14 @@ namespace DnDCharacterCreation
 
                 if (inputInt == 1)
                 {
-
-                    int scoreInput;
-                    int i = 1;
-
-                    foreach (int item in standardSet)
-                    {
-                        MenuColor();
-                        Console.Write("STRENGHT: ");
-                        PlayerColor();
-                        scoreInput = Console.Read();
-
-                        Console.WriteLine(i + " " + item);
-                        i += 1;
-                    }
-
-                    ChoiceColor();
-                    Console.WriteLine("STANDARD SET\n");
-                    ClearColor();
-                    Console.Write("Standard set:    ");
-                    InfoColor();
-                    Console.WriteLine("15, 14, 13, 12, 10, 8");
-                    ClearColor();
-
-                    if (standardSet.Contains(8))
-                    {
-
-                    }
-
-                    else
-                    {
-                        Console.WriteLine();
-                    }
-
-
-
+                    StandardSet();
                     selectionOkay = true;
                 }
 
                 else if (inputInt == 2)
                 {
-                    selectionOkay = false;
+                    StandardSet();
+                    selectionOkay = true;
                 }
 
                 else
@@ -153,17 +130,147 @@ namespace DnDCharacterCreation
                     Console.WriteLine("Please check your input.");
                     selectionOkay = false;
                 }
+
             }
         }
 
         public void StandardSet()
         {
-            Console.WriteLine("");
+            selectionOkay = false;
+
+            foreach (string item in abilities)
+            {
+                int i = 0;
+                while (!selectionOkay && i < abilities.Length)
+                {
+
+                    ClearColor();
+                    Console.Write("Select a value from the following list ");
+                    MenuColor();
+
+                    int i1 = 0;
+                    foreach (int var in standardSet)
+                    {
+                        MenuColor();
+                        Console.Write(var + " ");
+                        ClearColor();
+                    }
+                    ClearColor();
+
+                    Console.WriteLine();
+
+                    MenuColor();
+                    Console.Write(abilities[i] + " ");
+                    PlayerColor();
+
+                    string input = Console.ReadLine();
+                    ClearColor();
+                    int.TryParse(input, out scoreInput);
+
+                    if (standardSet.Contains(scoreInput))
+                    {
+                        //save scoreinput oikeaan paikkaan SKILL arrayssa
+                        SKILLS[i] = scoreInput;
+
+                        int numToRemove = scoreInput;
+                        int numIndex = Array.IndexOf(standardSet, numToRemove);
+                        standardSet = standardSet.Where((val, idx) => idx != numIndex).ToArray();
+
+                        i1 += 1;
+                        i += 1;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please check your input.");
+                    }
+
+                    if (i == abilities.Length)
+                    {
+                        selectionOkay = true;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nAbility scores set.\n");
+        }
+
+        public void RollScore()
+        {
+            Dice roll = new Dice();
+
+            Console.WriteLine("Rolling ");
+            InfoColor();
+            Console.Write(" D6 4 times and taking the 3 highest numbers.\n");
+            ClearColor();
+
+            for (int six = 6)
+            {
+
+            }
+            int iRoll = roll.D6();
         }
 
         public void CustomSet()
         {
 
+            {
+                selectionOkay = false;
+
+                foreach (string item in abilities)
+                {
+                    int i = 0;
+                    while (!selectionOkay && i < abilities.Length)
+                    {
+
+                        ClearColor();
+                        Console.Write("Select a value from the following list ");
+                        MenuColor();
+
+                        int i1 = 0;
+                        foreach (int var in customSet)
+                        {
+                            MenuColor();
+                            Console.Write(var + " ");
+                            ClearColor();
+                        }
+                        ClearColor();
+
+                        Console.WriteLine();
+
+                        MenuColor();
+                        Console.Write(abilities[i] + " ");
+                        PlayerColor();
+
+                        string input = Console.ReadLine();
+                        ClearColor();
+                        int.TryParse(input, out scoreInput);
+
+                        if (customSet.Contains(scoreInput))
+                        {
+                            //save scoreinput oikeaan paikkaan SKILL arrayssa
+                            SKILLS[i] = scoreInput;
+
+                            int numToRemove = scoreInput;
+                            int numIndex = Array.IndexOf(customSet, numToRemove);
+                            customSet = customSet.Where((val, idx) => idx != numIndex).ToArray();
+
+                            i1 += 1;
+                            i += 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please check your input.");
+                        }
+
+                        if (i == abilities.Length)
+                        {
+                            selectionOkay = true;
+                        }
+                    }
+                }
+
+                Console.WriteLine("\nAbility scores set.\n");
+            }
         }
     }
 }

@@ -38,8 +38,8 @@ namespace DnDCharacterCreation
 
         public void StatsColor()
         {
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
+            //Console.BackgroundColor = ConsoleColor.White;
         }
     }
 }

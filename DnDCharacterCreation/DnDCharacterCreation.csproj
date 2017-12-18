@@ -50,7 +50,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Race.cs" />
-    <Compile Include="RaceCharacteristics.cs" />
+    <Compile Include="IBonuses.cs" />
     <Compile Include="AbilityScores.cs" />
     <Compile Include="SelectClass.cs" />
     <Compile Include="TextEffects.cs" />
