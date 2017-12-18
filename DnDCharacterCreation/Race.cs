@@ -13,15 +13,14 @@ namespace DnDCharacterCreation
         string[] allRaces = { "Dragonborn", "Drawf", "Elf", "Half-Elf", "Half-Orc", "Halfling", "Human", "Thiefling" };
 
         //      THE CHOSEN RACE     //
-        public string RACE;
+        public static string RACE;
 
         int raceNumber;
-        int inputInt;
 
         public void RaceSelection()
         {
             Console.WriteLine("Please input the number of the selected race.");
-            Console.WriteLine("List of the available races:");
+            Console.WriteLine("List of the available races:\n");
 
             int i = 1;
 
@@ -64,11 +63,9 @@ namespace DnDCharacterCreation
                     PlayerColor();
                     input = Console.ReadLine();
                     Console.WriteLine();
-                    int.TryParse(input, out inputInt);
+                    int.TryParse(input, out int inputInt);
 
                     ClearColor();
-
-                    input.ToUpper();
 
                     if (inputInt == 1)
                     {

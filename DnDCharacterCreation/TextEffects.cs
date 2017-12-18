@@ -24,9 +24,16 @@ namespace DnDCharacterCreation
             Console.ForegroundColor = ConsoleColor.Green;
         }
 
+        public void InfoColor()
+        {
+            //Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+        }
+
         public void ClearColor()
         {
-            Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         public void StatsColor()

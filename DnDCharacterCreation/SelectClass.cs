@@ -13,10 +13,9 @@ namespace DnDCharacterCreation
         string[] allClasses = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
 
         //      THE CHOSEN CLASS     //
-        public string CHOSENCLASS;
+        public static string CHOSENCLASS;
 
         int classNumber;
-        int inputInt;
 
         public void ClassSelection()
         {
@@ -64,7 +63,7 @@ namespace DnDCharacterCreation
                     PlayerColor();
                     input = Console.ReadLine();
                     Console.WriteLine();
-                    int.TryParse(input, out inputInt);
+                    int.TryParse(input, out int inputInt);
 
 
                     ClearColor();
@@ -74,7 +73,7 @@ namespace DnDCharacterCreation
                     if (inputInt == 1)
                     {
                         CHOSENCLASS = allClasses[classNumber];
-                        Console.WriteLine("Your character's class is now " + CHOSENCLASS + ".");
+                        Console.WriteLine("Your character's class is now " + CHOSENCLASS + ".\n");
                         classSelected = true;
                         ClassCharacteristics();
                     }

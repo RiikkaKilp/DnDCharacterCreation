@@ -9,10 +9,7 @@ namespace DnDCharacterCreation
     class Name : TextEffects
     {
         //      THE CHOSEN NAME     //
-        public string NAME;
-
-        public string newName;
-        int inputInt;
+        public static string NAME;
 
         public void SetName()
         {
@@ -24,11 +21,11 @@ namespace DnDCharacterCreation
                 Console.WriteLine("INPUT A NAME:");
 
                 PlayerColor();
-                newName = Console.ReadLine();
+                NAME = Console.ReadLine();
                 Console.WriteLine();
 
                 ClearColor();
-                Console.WriteLine("Is the name " + newName + " okay?");
+                Console.WriteLine("Is the name " + NAME + " okay?");
 
                 MenuColor();
                 Console.WriteLine("1 YES \n2 NO");
@@ -36,13 +33,13 @@ namespace DnDCharacterCreation
                 PlayerColor();
                 string input = Console.ReadLine();
                 Console.WriteLine();
-                int.TryParse(input, out inputInt);
+                int.TryParse(input, out int inputInt);
 
                 ClearColor();
 
                 if (inputInt == 1)
                 {
-                    Console.WriteLine("Your character is named " + newName + ".\n");
+                    Console.WriteLine("Your character is named " + NAME + ".\n");
                     nameOkay = true;
                 }
 
@@ -59,10 +56,5 @@ namespace DnDCharacterCreation
             }
         }
 
-        public string GetName(string NAME)
-        {
-            NAME = newName;
-            return NAME;
-        }
     }
 }

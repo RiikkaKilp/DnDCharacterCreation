@@ -8,15 +8,6 @@ namespace DnDCharacterCreation
 {
     class PrintStats : TextEffects
     {
-        //          RACE        //
-        string name = "";
-
-        //          RACE        //
-        string race = "";
-
-        //          CLASS       //
-        string characterClass = "";
-
         //      ABILITY SCORES AND SKILLS     //
         int strength = 11, dexterity = 11, constitution = 11, intelligence = 11, wisdom = 11, charisma = 11;
 
@@ -38,22 +29,27 @@ namespace DnDCharacterCreation
         {
             StatsColor();
             Console.WriteLine();
-            Console.WriteLine("┌───────────────────────────────────┐");
-            Console.WriteLine("│-------------- STATS --------------│");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│   NAME: " + n.NAME + " RACE: " + r.RACE + " CLASS: " + characterClass + "           ");
-            Console.WriteLine("│                                   │");
+            Console.WriteLine("┌───────────────────────────────────────────────┐");
+            Console.WriteLine("│---------------------STATS---------------------│");
+            Console.WriteLine("│   NAME: " + Name.NAME +  "                                ");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│   RACE: " + Race.RACE + "      CLASS: " + SelectClass.CHOSENCLASS + "      ");
+            Console.WriteLine("│                                               │");
             Console.WriteLine("│   STR: " + strength + " DEX: " + dexterity + " CONST: " + constitution + "             ");
-            Console.WriteLine("│                                   │");
+            Console.WriteLine("│                                               │");
             Console.WriteLine("│   INT: " + intelligence + " WIS: " + wisdom + " CHA: " + charisma + "               ");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("│                                   │");
-            Console.WriteLine("└───────────────────────────────────┘");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("│                                               │");
+            Console.WriteLine("└───────────────────────────────────────────────┘");
             Console.WriteLine();
 
             ClearColor();
