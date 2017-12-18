@@ -10,6 +10,7 @@ namespace DnDCharacterCreation
     {
         static void Main(string[] args)
         {
+            Console.Title = "Dungeons & Dragons 5th edition Character Creation";
             CharacterCreation start = new CharacterCreation();
             start.Start();
         }

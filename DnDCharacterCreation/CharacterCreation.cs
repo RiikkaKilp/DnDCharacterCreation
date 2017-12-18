@@ -6,19 +6,34 @@ using System.Threading.Tasks;
 
 namespace DnDCharacterCreation
 {
-    class CharacterCreation
+    class CharacterCreation : TextEffects
     {
         public void Start()
         {
+
+            Race race = new Race();
+            SelectClass classSelect = new SelectClass();
             Name name = new Name();
             Dice roll = new Dice();
             PrintStats stats = new PrintStats();
 
-            Console.WriteLine("Hello, and welcome to the great Dungeons and Dragons (TM) Character Creation consoleapp!");
+            Console.WriteLine("Hello, and welcome to the Dungeons & Dragons 5th Edition Character Creation app!");
 
-            Console.WriteLine("Let's choose a name for your character");
+            ChoiceColor();
+            Console.WriteLine("CHOOSING A NAME\n");
+            ClearColor();
             name.SetName();
-            
+
+            ChoiceColor();
+            Console.WriteLine("CHOOSING A RACE\n");
+            ClearColor();
+            race.RaceSelection();
+
+            ChoiceColor();
+            Console.WriteLine("CHOOSING A CLASS\n");
+            ClearColor();
+            classSelect.ClassSelection();
+
             Console.WriteLine("Let's print the stats.");
             stats.GetStats();
             

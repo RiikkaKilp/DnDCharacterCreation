@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DnDCharacterCreation
 {
-    class Name
+    class Name : TextEffects
     {
+        //      THE CHOSEN NAME     //
+        public string NAME;
+
         public string newName;
-        public string name;
+        int inputInt;
 
         public void SetName()
         {
@@ -17,22 +20,33 @@ namespace DnDCharacterCreation
 
             while (!nameOkay)
             {
-                // git test
-                Console.WriteLine("----- INPUT NAME -----");
+                MenuColor();
+                Console.WriteLine("INPUT A NAME:");
+
+                PlayerColor();
                 newName = Console.ReadLine();
+                Console.WriteLine();
+
+                ClearColor();
                 Console.WriteLine("Is the name " + newName + " okay?");
 
-                Console.WriteLine("YES \n NO");
-                string input = Console.ReadLine();
-                input.ToUpper();
+                MenuColor();
+                Console.WriteLine("1 YES \n2 NO");
 
-                if (input == "YES")
+                PlayerColor();
+                string input = Console.ReadLine();
+                Console.WriteLine();
+                int.TryParse(input, out inputInt);
+
+                ClearColor();
+
+                if (inputInt == 1)
                 {
-                    Console.WriteLine("Yout character is named " + newName + ".");
+                    Console.WriteLine("Your character is named " + newName + ".\n");
                     nameOkay = true;
                 }
 
-                else if (input == "NO")
+                else if (inputInt == 2)
                 {
                     nameOkay = false;
                 }
@@ -45,10 +59,10 @@ namespace DnDCharacterCreation
             }
         }
 
-        public string GetName(string name)
+        public string GetName(string NAME)
         {
-            name = newName;
-            return name;
+            NAME = newName;
+            return NAME;
         }
     }
 }

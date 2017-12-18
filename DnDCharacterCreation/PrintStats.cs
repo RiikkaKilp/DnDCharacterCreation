@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DnDCharacterCreation
 {
-    class PrintStats
+    class PrintStats : TextEffects
     {
         //          RACE        //
         string name = "";
@@ -32,13 +32,16 @@ namespace DnDCharacterCreation
         int deception, intimidation, performance, persuasion;
 
         Name n = new Name();
+        Race r = new Race();
 
         public void GetStats()
         {
+            StatsColor();
+            Console.WriteLine();
             Console.WriteLine("┌───────────────────────────────────┐");
             Console.WriteLine("│-------------- STATS --------------│");
             Console.WriteLine("│                                   │");
-            Console.WriteLine("│   NAME: " + n.name + " RACE: " + race + " CLASS: " + characterClass + "           ");
+            Console.WriteLine("│   NAME: " + n.NAME + " RACE: " + r.RACE + " CLASS: " + characterClass + "           ");
             Console.WriteLine("│                                   │");
             Console.WriteLine("│   STR: " + strength + " DEX: " + dexterity + " CONST: " + constitution + "             ");
             Console.WriteLine("│                                   │");
@@ -51,6 +54,9 @@ namespace DnDCharacterCreation
             Console.WriteLine("│                                   │");
             Console.WriteLine("│                                   │");
             Console.WriteLine("└───────────────────────────────────┘");
+            Console.WriteLine();
+
+            ClearColor();
         }
     }
 }

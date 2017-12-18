@@ -52,6 +52,7 @@
     <Compile Include="Race.cs" />
     <Compile Include="RaceCharacteristics.cs" />
     <Compile Include="SelectClass.cs" />
+    <Compile Include="TextEffects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
