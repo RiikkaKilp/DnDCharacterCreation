@@ -50,7 +50,9 @@ namespace DnDCharacterCreation
 
                 else
                 {
+                    ErrorColor();
                     Console.WriteLine("Please check your input.");
+                    ClearColor();
                     nameOkay = false;
                 }
             }

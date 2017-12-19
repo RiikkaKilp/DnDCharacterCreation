@@ -41,5 +41,10 @@ namespace DnDCharacterCreation
             Console.ForegroundColor = ConsoleColor.White;
             //Console.BackgroundColor = ConsoleColor.White;
         }
+
+        public void ErrorColor()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
     }
 }

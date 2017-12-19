@@ -9,21 +9,32 @@ namespace DnDCharacterCreation
     class PrintStats : TextEffects
     {
         //      ABILITY SCORES AND SKILLS     //
-        int strength = 11, dexterity = 11, constitution = 11, intelligence = 11, wisdom = 11, charisma = 11;
+        //int strength = 11, dexterity = 11, constitution = 11, intelligence = 11, wisdom = 11, charisma = 11;
 
-        //STR based:
-        int athletics;
-        //DEX based:
-        int acrobatics, stealth;
-        //INT based:
-        int arcana, history, investigation, nature, religion;
-        //WIS based:
-        int animalHandling, insight, medicine, perception, survival;
-        //CHA based:
-        int deception, intimidation, performance, persuasion;
+        //  STR based:
+        //int athletics;
+        //  DEX based:
+        //int acrobatics, stealth;
+        //  INT based:
+        //int arcana, history, investigation, nature, religion;
+        //  WIS based:
+        //int animalHandling, insight, medicine, perception, survival;
+        //  CHA based:
+        //int deception, intimidation, performance, persuasion;
 
-        Name n = new Name();
-        Race r = new Race();
+        //  Placeholder Hit Points
+        int HP = 15;
+        //  Placeholder Armor Class
+        int AC = 15;
+
+        // Placeholder Initiative
+        // Initiative is DEX modifier
+        int INIT = AbilityScores.SKILLS[1];
+
+        // Placeholder Speed
+        int SPEED = 30;
+
+        
 
         public void GetStats()
         {
@@ -36,6 +47,8 @@ namespace DnDCharacterCreation
             Console.WriteLine("│                                               │");
             Console.WriteLine("│   RACE: " + Race.RACE + "      CLASS: " + SelectClass.CHOSENCLASS + "      ");
             Console.WriteLine("│                                               │");
+            Console.WriteLine("│   HP: " + HP + "    AC: " + AC + "    INITIATIVE: " + INIT + "    SPEED:" + SPEED + "ft    ");
+            Console.WriteLine("│                                               │");
             Console.WriteLine("│           ---- ABILITY SCORES ----             ");
             Console.WriteLine("│                                               │");
             Console.WriteLine("│   STR: " + AbilityScores.SKILLS[0] + " DEX: " + AbilityScores.SKILLS[1] + " CONST: " + AbilityScores.SKILLS[2] + "             ");
@@ -44,7 +57,7 @@ namespace DnDCharacterCreation
             Console.WriteLine("│                                               │");
             Console.WriteLine("│           -------- SKILLS --------            │");
             Console.WriteLine("│                                               │");
-            Console.WriteLine("│   Acrobatics:        " + "  Medicine:             " + " │");
+            Console.WriteLine("│   Acrobatics:        " + "  Medicine:             " + 1 + " │");
             Console.WriteLine("│   Animal Handling:   " + "  Nature:               " + " │");
             Console.WriteLine("│   Arcana:            " + "  Perception:           " + " │");
             Console.WriteLine("│   Athletics:         " + "  Performance:          " + " │");

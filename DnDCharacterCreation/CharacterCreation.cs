@@ -28,7 +28,7 @@ namespace DnDCharacterCreation
                 Console.WriteLine("What do you want to set?");
 
                 MenuColor();
-                Console.WriteLine("1 NAME\n2 RACE\n3 CLASS\n4 ABILITY SCORES\n5 SHOW STATS");
+                Console.WriteLine("1 NAME\n2 RACE\n3 CLASS\n4 ABILITY SCORES\n5 SHOW STATS\n6 EXIT");
 
                 PlayerColor();
                 string input = Console.ReadLine();
@@ -58,8 +58,10 @@ namespace DnDCharacterCreation
                         classSelect.ClassSelection();
                         break;
                     case 4: // ROLL STATS
+                        ClearColor();
                         ChoiceColor();
                         Console.WriteLine("ROLLING STATS\n");
+                        ClearColor();
                         ClearColor();
                         abScores.ChooseMethod();
                         break;
@@ -73,7 +75,9 @@ namespace DnDCharacterCreation
                         running = false;
                         break;
                     default:
+                        ErrorColor();
                         Console.WriteLine("Please check your input.");
+                        ClearColor();
                         break;
                 }
             }

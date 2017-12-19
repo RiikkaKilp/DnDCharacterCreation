@@ -47,7 +47,9 @@ namespace DnDCharacterCreation
 
                 if (classNumber > allClasses.Length || classNumber <= 0)
                 {
+                    ErrorColor();
                     Console.WriteLine("Please check your input.");
+                    ClearColor();
                     classSelected = false;
                 }
 
@@ -85,7 +87,9 @@ namespace DnDCharacterCreation
 
                     else
                     {
+                        ErrorColor();
                         Console.WriteLine("Please check your input.");
+                        ClearColor();
                         classSelected = false;
                     }
                 }

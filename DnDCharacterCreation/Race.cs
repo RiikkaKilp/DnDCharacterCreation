@@ -47,7 +47,9 @@ namespace DnDCharacterCreation
 
                 if (raceNumber > allRaces.Length || raceNumber <= 0)
                 {
+                    ErrorColor();
                     Console.WriteLine("Please check your input.");
+                    ClearColor();
                     raceSelected = false;
                 }
 
@@ -82,13 +84,13 @@ namespace DnDCharacterCreation
 
                     else
                     {
+                        ErrorColor();
                         Console.WriteLine("Please check your input.");
+                        ClearColor();
                         raceSelected = false;
                     }
-                }
-                
+                }                
             }
-
         }
 
         public void RaceCharacteristics()
