@@ -12,6 +12,8 @@ namespace DnDCharacterCreation
         int[] standardSet = {15, 14, 13, 12, 10, 8 };
         int[] customSet = {0, 0, 0, 0, 0, 0 };
 
+        int[] chosenSet = { };
+
         //      SELECTED STATS IN THE FOLLOWING ORDER:  STR, DEX, CONST, INT, WIS, CHA, null      //
         public static int[] SKILLS = {0, 0, 0, 0, 0, 0};
 
@@ -115,13 +117,16 @@ namespace DnDCharacterCreation
 
                 if (inputInt == 1)
                 {
-                    StandardSet();
+                    chosenSet = standardSet;
+                    SettingScore();
                     selectionOkay = true;
                 }
 
                 else if (inputInt == 2)
                 {
-                    StandardSet();
+                    chosenSet = customSet;
+                    RollScore();
+                    SettingScore();
                     selectionOkay = true;
                 }
 
@@ -134,7 +139,7 @@ namespace DnDCharacterCreation
             }
         }
 
-        public void StandardSet()
+        public void SettingScore()
         {
             selectionOkay = false;
 
@@ -149,7 +154,7 @@ namespace DnDCharacterCreation
                     MenuColor();
 
                     int i1 = 0;
-                    foreach (int var in standardSet)
+                    foreach (int var in chosenSet)
                     {
                         MenuColor();
                         Console.Write(var + " ");
@@ -167,14 +172,14 @@ namespace DnDCharacterCreation
                     ClearColor();
                     int.TryParse(input, out scoreInput);
 
-                    if (standardSet.Contains(scoreInput))
+                    if (chosenSet.Contains(scoreInput))
                     {
                         //save scoreinput oikeaan paikkaan SKILL arrayssa
                         SKILLS[i] = scoreInput;
 
                         int numToRemove = scoreInput;
                         int numIndex = Array.IndexOf(standardSet, numToRemove);
-                        standardSet = standardSet.Where((val, idx) => idx != numIndex).ToArray();
+                        chosenSet = chosenSet.Where((val, idx) => idx != numIndex).ToArray();
 
                         i1 += 1;
                         i += 1;
@@ -198,15 +203,40 @@ namespace DnDCharacterCreation
         {
             Dice roll = new Dice();
 
-            Console.WriteLine("Rolling ");
+            Console.Write("Rolling ");
             InfoColor();
-            Console.Write(" D6 4 times and taking the 3 highest numbers.\n");
+            Console.WriteLine("D6 4 times and taking the 3 highest numbers.\n");
             ClearColor();
 
-            for (int six = 6)
-            {
+            int setNumber = 1;
 
+            for (int i = 0; i < 6; i++)
+            {
+                setNumber++;
+                int rollTotal = 0;
+
+                int roll1, roll2, roll3, roll4;
+                
+                roll1 = roll.D6();
+                roll2 = roll.D6();
+                roll3 = roll.D6();
+                roll4 = roll.D6();
+           
+                int[] allRolls = { roll1, roll2, roll3, roll4 };
+           
+                int smallestRoll = allRolls.Min();
+           
+                rollTotal = allRolls.Sum() - smallestRoll;
+
+                InfoColor();
+                Console.WriteLine("Rolling set number " + setNumber + ". Got numbers: ");
+                MenuColor();
+                Console.WriteLine(+roll1 + ", " + roll2 + ", " + roll3 + " and " + roll4);
+                ClearColor();
+
+                customSet[i] = rollTotal;
             }
+
             int iRoll = roll.D6();
         }
 
